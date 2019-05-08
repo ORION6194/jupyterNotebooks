@@ -13116,7 +13116,34 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Analyzing-the-Revenue-and-Profit-Trends-of-Fortune-500-companies-from-1955-2013">Analyzing the Revenue and Profit Trends of Fortune 500 companies from 1955-2013<a class="anchor-link" href="#Analyzing-the-Revenue-and-Profit-Trends-of-Fortune-500-companies-from-1955-2013">&#182;</a></h2><!--Add a brief about what we plan to do as part of this Notebook-->
+<h1 id="Jupyter-Notebooks:-A-Primer">Jupyter Notebooks: A Primer<a class="anchor-link" href="#Jupyter-Notebooks:-A-Primer">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Jupyter Notebooks offer a great way to write and iterate on your Python code. It is an incredibly powerful tool for interactively developing and presenting data science projects. A notebook integrates code and its output into a single document that combines visualisations, narrative text, mathematical equations, and other rich media. The intuitive workflow promotes iterative and rapid development, making notebooks an increasingly popular choice at the heart of contemporary data science, analysis, and increasingly science at large. Best of all, as part of the open source <em>Project Jupyter</em>, they are completely free.</p>
+<p><a href="https://jupyter.org/">Project Jupyter</a> is the successor to an earlier IPython Notebook, which was first published as a prototype in 2010. Jupyter Notebook is built off of IPython, an interactive way of running Python code in the terminal using the <strong>REPL model (Read-Eval-Print-Loop)</strong>. The <em>IPython Kernel</em> runs the computations and communicates with the Jupyter Notebook front-end interface. It also allows Jupyter Notebook to support multiple languages. Jupyter Notebooks extend IPython through additional features, like storing your code and output and allowing you to keep markdown notes.</p>
+<p>Although it is possible to use many different programming languages within Jupyter Notebooks, this article will focus on Python as it is the most common use case.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Analyzing-the-Revenue-and-Profit-Trends-of-Fortune-500-companies-from-1955-2013">Analyzing the Revenue and Profit Trends of Fortune 500 companies from 1955-2013<a class="anchor-link" href="#Analyzing-the-Revenue-and-Profit-Trends-of-Fortune-500-companies-from-1955-2013">&#182;</a></h2><p>As we go through this example, we will learn how the jupyter notebooks are used in practice and also understand some of the advanced features.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Downloading-the-DataSet">Downloading the DataSet<a class="anchor-link" href="#Downloading-the-DataSet">&#182;</a></h3><p>The data set that we will be using to analyze the revenue and profit trends of fortune 500 companies has been sourced from <a href="http://archive.fortune.com/magazines/fortune/fortune500_archive/full/2005/">Fortune 500 Archives</a> and <a href="https://topforeignstocks.com/downloads/">topforeignstocks.com</a>. 
+For your ease we have compiled the data from both the sources and created a <a href="https://github.com/ORION6194/jupyterNotebooks/blob/master/data/fortune500_1955_2013.csv">CSV</a> for you.</p>
+
 </div>
 </div>
 </div>
@@ -13324,7 +13351,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;rank&#39;</span><span class="p">,</span> <span class="s1">&#39;company&#39;</span><span class="p">,</span> <span class="s1">&#39;revenue&#39;</span><span class="p">,</span> <span class="s1">&#39;profit&#39;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13337,13 +13364,15 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>30000
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>30000</pre>
 </div>
+
 </div>
 
 </div>
@@ -13502,8 +13531,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List of distinct Non-numeric revenue values: &quot;</span><span class="p">)</span>
-<span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">revenue</span><span class="p">[</span><span class="n">non_numeric_revenues</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List of distinct Non-numeric revenue values: &quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">revenue</span><span class="p">[</span><span class="n">non_numeric_revenues</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -13520,22 +13548,9 @@ dtype: object</pre>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>List of distinct Non-numeric revenue values: 
+<pre>List of distinct Non-numeric revenue values:  {&#39;N.A.&#39;}
 </pre>
 </div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;N.A.&#39;}</pre>
-</div>
-
 </div>
 
 </div>
@@ -13735,8 +13750,7 @@ dtype: object</pre>
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List of distinct Non-numeric profit values: &quot;</span><span class="p">)</span>
-<span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">profit</span><span class="p">[</span><span class="n">non_numeric_profits</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List of distinct Non-numeric profit values: &quot;</span><span class="p">,</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">profit</span><span class="p">[</span><span class="n">non_numeric_profits</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -13753,22 +13767,9 @@ dtype: object</pre>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>List of distinct Non-numeric profit values: 
+<pre>List of distinct Non-numeric profit values:  {&#39;N.A.&#39;}
 </pre>
 </div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;N.A.&#39;}</pre>
-</div>
-
 </div>
 
 </div>
@@ -14072,8 +14073,8 @@ dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>That's astonishing, the standard deviations are huge. Some companies are making billions while some others are losing as much, and the risk certainly has increased along with rising profits and revenues over the years.</p>
-<p>Although we could keep on playing around with our data set and plot plenty more charts to analyze, it is time to draw this article to a close.</p>
+<p>That's astonishing, the standard deviations are huge. Some companies are making billions while some others are losing as much, and the risk certainly has increased along with rising profits and revenues over the years. 
+Although we could keep on playing around with our data set and plot plenty more charts to analyze, it is time to draw this article to a close.</p>
 
 </div>
 </div>
@@ -14081,7 +14082,7 @@ dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>As part of this article we have seen various features of the Jupyter notebooks, from basics like editing and running code cells to more advanced features like plotting graphs. The power of Jupyter Notebooks to promote a productive working experience and provide an ease of use is evident from the above example, and I do hope that you feel confident to begin using Jupyter Notebooks in your own work and start exploring more advanced features.</p>
+<h2 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h2><p>As part of this article we have seen various features of the Jupyter notebooks, from basics like installation, creating, editing and running code cells to more advanced features like plotting graphs. The power of Jupyter Notebooks to promote a productive working experience and provide an ease of use is evident from the above example, and I do hope that you feel confident to begin using Jupyter Notebooks in your own work and start exploring more advanced features.</p>
 
 </div>
 </div>
